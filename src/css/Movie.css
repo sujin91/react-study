@@ -1,6 +1,5 @@
 .movie .movie_item {
     word-break: break-all;
-    width: 45%;
     background-color: white;
     margin-bottom: 70px;
     display: flex;
