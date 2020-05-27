@@ -33,13 +33,13 @@ class App extends React.Component {
     } = this.state
 
     return (
-      <section class="container">
+      <section className="container">
         {isLoading 
-          ? (<span class="loader">Loading...</span>)
-          : (<div class="movie">
+          ? (<span className="loader">Loading...</span>)
+          : (<div className="movie">
             {
             movies.map(movie => (
-             <Movie key={movie.id} id={movie.id} year={movie.year} title={movie.title} summary={movie.summary} poster={movie.medium_cover_image}/>
+             <Movie key={movie.id} id={movie.id} year={movie.year} genres={movie.genres} title={movie.title} summary={movie.summary} poster={movie.medium_cover_image}/>
             ))
             }
           </div>)

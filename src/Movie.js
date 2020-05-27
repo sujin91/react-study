@@ -4,14 +4,15 @@ import './css/Movie.css'
 
 function Movie(movies) {
     return (
-        <div class="movies_item">
-            <div class="movies_thumb">
-                <img src={movies.poster} alt={movies.title} title={movies.title}/>
-            </div>
-            <div class="movies_info">
-                <strong class="movies_tit">{movies.title}</strong>
-                <em class="movie_year">{movies.year}</em>  
-                <p class="movie_summary">{movies.summary}</p>
+        <div className="movie_item">
+            <img src={movies.poster} alt={movies.title} title={movies.title}/>
+            <div className="movie_info">
+                <strong className="movie_tit">{movies.title}</strong>
+                <em className="movie_year">{movies.year}</em>  
+                <ul className="movie_genres">
+                    {movies.genres.map(genre => (<li className="genre">{genre}</li>))}
+                </ul>
+                <p className="movie_summary">{movies.summary}</p>
             </div>
         </div>
     )
@@ -22,6 +23,7 @@ Movie.propTypes = {
     year: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     summary: PropTypes.string.isRequired,
-    poster: PropTypes.string.isRequired
+    poster: PropTypes.string.isRequired,
+    genres: PropTypes.arrayOf(PropTypes.string).isRequired
 }
 export default Movie
